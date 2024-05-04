@@ -17,12 +17,20 @@ const Sidebar = () => {
       >
         Alix Smith
       </a>
-      <div className=" flex ml-[20px] text-white">
+      <div className=" flex ml-[20px] my-3 text-white">
         <span className="H-contacts !pl-[10px]">{ICONS.twitter}</span>
         <span className="H-contacts !pl-[8px]">{ICONS.facebook}</span>
         <span className="H-contacts !pl-[8px]">{ICONS.instagram}</span>
         <span className="H-contacts !pl-[8px]">{ICONS.skype}</span>
         <span className="H-contacts !pl-[10px]">{ICONS.linkedin}</span>
+      </div>
+      <div className="my-6 H-nav">
+        <a href="#home" ><i className="text-white">{ICONS.home} </i> <span className="" > Home</span></a>
+        <a href="#about" ><i>{ICONS.about} </i> <span className="" >  About</span></a>
+        {/* <a href="#resume" ><i>{ICONS.resume} </i> <span className="" >  Resume</span></a> */}
+        <a href="#portfolio" ><i>{ICONS.portfolio} </i> <span className="" >  Portfolio</span></a>
+        {/* <a href="#services" ><i>{ICONS.services} </i> <span className="" >  Services</span></a> */}
+        <a href="#contact" ><i>{ICONS.contact} </i> <span className="" > Contact</span></a>
       </div>
     </div>
   );
