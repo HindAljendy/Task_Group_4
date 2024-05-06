@@ -48,6 +48,6 @@
 .H-nav a:hover{
     color: #fff;
 }
-.H-nav  i:hover{
-    color: #149ddd,
+.H-nav a i:hover{
+    color: #149ddd !important
 }

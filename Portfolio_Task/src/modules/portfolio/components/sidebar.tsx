@@ -1,9 +1,10 @@
 // hadeels part //
 import { Image } from "react-bootstrap";
-import { IMAGES } from "../utils/images.d";
-import { ICONS } from "../utils/icons.d";
+import { IMAGES } from "../../utils/images.d";
+import { ICONS } from "../../utils/icons.d";
 
 const Sidebar = () => {
+  const [active,setActive] = useState('/')
   return (
     <div className="fixed top-0 left-0 bottom-0 w-[300px] transition-all ease-in-out duration-500 z-9997 overflow-y-auto bg-gray-900 px-4">
       <Image
@@ -25,13 +26,15 @@ const Sidebar = () => {
         <span className="H-contacts !pl-[10px]">{ICONS.linkedin}</span>
       </div>
       <div className="my-6 H-nav">
-        <a href="#home" ><i className="text-white">{ICONS.home} </i> <span className="" > Home</span></a>
+        <a href="#home" onClick={()=>setActive('home')} className={` ${active === 'home' ? 'text-white':''}`}><i className={` ${active === 'home' ? '!text-[#149ddd]':''}`}>{ICONS.home} </i> <span className="" > Home</span></a>
         <a href="#about" ><i>{ICONS.about} </i> <span className="" >  About</span></a>
         {/* <a href="#resume" ><i>{ICONS.resume} </i> <span className="" >  Resume</span></a> */}
         <a href="#portfolio" ><i>{ICONS.portfolio} </i> <span className="" >  Portfolio</span></a>
         {/* <a href="#services" ><i>{ICONS.services} </i> <span className="" >  Services</span></a> */}
         <a href="#contact" ><i>{ICONS.contact} </i> <span className="" > Contact</span></a>
       </div>
+     
+    
     </div>
   );
 };
