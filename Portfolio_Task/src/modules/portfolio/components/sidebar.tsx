@@ -1,7 +1,8 @@
 // hadeels part //
 import { Image } from "react-bootstrap";
-import { IMAGES } from "../../utils/images.d";
-import { ICONS } from "../../utils/icons.d";
+import { useState } from "react";
+import { IMAGES } from "../utils/images.d";
+import { ICONS } from "../utils/icons.d";
 
 const Sidebar = () => {
   const [active,setActive] = useState('/')
