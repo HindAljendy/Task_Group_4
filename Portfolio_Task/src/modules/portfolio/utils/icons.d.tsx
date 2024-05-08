@@ -1,7 +1,7 @@
 import { AiOutlineHome } from "react-icons/ai";
 import { BiBookContent, BiServer } from "react-icons/bi";
 import { BsInstagram } from "react-icons/bs";
-import { FaFacebookF, FaLinkedinIn, FaRegFile, FaSkype, FaTwitter } from "react-icons/fa";
+import { FaChevronRight, FaFacebookF, FaLinkedinIn, FaRegFile, FaSkype, FaTwitter } from "react-icons/fa";
 import { MdOutlineEmail, MdOutlinePersonOutline } from "react-icons/md";
 
 export const ICONS = {
@@ -15,6 +15,7 @@ export const ICONS = {
     resume: <FaRegFile />,
     services: <BiServer />,
     portfolio: <BiBookContent />,
-    contact: <MdOutlineEmail />
+    contact: <MdOutlineEmail />,
+    arrow: <FaChevronRight />
 
 }
