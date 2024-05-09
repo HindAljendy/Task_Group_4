@@ -7,6 +7,8 @@
     padding: 0;
     box-sizing: border-box;
     margin: 0;
+    font-family: "Open Sans", sans-serif;
+
 }
 
 .H-contacts {
@@ -50,4 +52,116 @@
 }
 .H-nav a i:hover{
     color: #149ddd !important
+}
+.section-title{
+font-size: 32px;
+font-weight: bold;
+margin-bottom: 10px;
+padding-bottom: 20px;
+position: relative;
+color: #173b6c;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #149ddd;
+    bottom: 0;
+    left: 0;
+    margin:  1rem 0;
+
+}
+
+.arrow{
+    font-size: 16px;
+    margin-right: 5px;
+    color: #149ddd;
+    line-height: 0;
+}
+
+.fadding-left{
+    animation-name: fade-left;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}   
+
+.fadding-right{
+    animation-name: fade-right;
+    animation-duration: 1s;
+    animation-timing-function: linear;  
+}
+
+
+
+/* contact part */
+
+.contact-icons{
+    font-size: 20px;
+    color: #149ddd;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #dff3fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.contact-icons:hover{
+    background: #149ddd;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* animation */
+@keyframes fade-left {
+    0%{
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+
+    50%{
+        transform: translateX(-20px);
+        opacity: 0.5;
+
+    }
+
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes fade-right {
+    0%{
+        transform: translateX(40px);
+        opacity: 0;
+    }
+
+    50%{
+        transform: translateX(20px);
+        opacity: 0.5;
+
+    }
+
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }

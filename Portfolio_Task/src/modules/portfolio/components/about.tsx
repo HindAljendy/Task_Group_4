@@ -1,71 +1,100 @@
 import { Image } from "react-bootstrap";
 import { ICONS } from "../utils/icons.d";
 import { IMAGES } from "../utils/images.d";
+import "./../../../index.css";
 const About = () => {
   return (
-    <div id="about" className="w-[80%] ml-auto">
-      <div className="w-[95%] m-auto">
-        <div className="section-title">
-          <h2 className="text-[#173b6c] font-[700] text-[26px]">About</h2>
-          <p className="mb-6">
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 w-full">
-          <div className="w-[70%] mr-4" data-aos="fade-right ">
-            <Image src={IMAGES.profile} className="" alt="" />
+    <div id="about" className="md:w-[80%] ml-auto my-6">
+      <div className="px-4 ">
+        <h3 className="section-title">About</h3>
+        <p>
+          Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
+          quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+          fugiat sit in iste officiis commodi quidem hic quas.
+        </p>
+        <div className="my-2 md:flex items-center justify-between">
+          <div className="fadding-left md:w-[30%] w-[95%] mx-auto md:my-0 my-2 ">
+            <Image src={IMAGES.profile} alt="" />
           </div>
-          <div className=" pt-4 relative right-[120px] top-[-20px] content" data-aos="fade-left">
-            <h3 className="text-[#173b6c] font-[700] text-[26px] mb-2">UI/UX Designer &amp; Web Developer.</h3>
-            <p className="italic my-2">
+          <div className="fadding-right md:w-[65%] w-[95%] md:mr-auto md:px-4">
+            <h3 className=" text-[#173b6c] font-[700] text-[26px]">
+              UI/UX Designer &amp; Web Developer.
+            </h3>
+            <p className="italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div className="grid grid-cols-2 my-2">
-              <div className="">
-                <ul>
-                  <li className="flex items-center ">
-                    <i className="text-[#149ddd] ">{ICONS.arrow}</i> <strong className="m-2">Birthday:</strong>{" "}
-                    <span>1 May 1995</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd]">{ICONS.arrow}</i> <strong className="m-2">Website:</strong>{" "}
-                    <span>www.example.com</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd]">{ICONS.arrow}</i> <strong className="m-2">Phone:</strong>{" "}
-                    <span>+123 456 7890</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd]">{ICONS.arrow}</i> <strong className="m-2">City:</strong>{" "}
-                    <span>New York, USA</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-6">
-                <ul>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd]">{ICONS.arrow}</i> <strong className="m-2">Age:</strong>{" "}
-                    <span>30</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd]">{ICONS.arrow}</i> <strong className="m-2">Degree:</strong>{" "}
-                    <span>Master</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd] ">{ICONS.arrow}</i>{" "}
-                    <strong className="m-2">PhEmailone:</strong> <span>email@example.com</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="text-[#149ddd] ">{ICONS.arrow}</i>{" "}
-                    <strong className="m-2">Freelance:</strong> <span>Available</span>
-                  </li>
-                </ul>
-              </div>
+            <div className=" sm:flex">
+              <ul className="!ml-[-30px]">
+                <li>
+                  {" "}
+                  <i className="arrow inline-block text-center ">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> Birthday: </strong>
+                  <span>1 May 1995</span>
+                </li>
+                <li className="my-2 ">
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> Website: </strong>
+                  <span>www.example.com</span>
+                </li>
+                <li className="my-2 ">
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> Phone: </strong>
+                  <span>+123 456 7890</span>
+                </li>
+                <li>
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> City: </strong>
+                  <span>New York, USA</span>
+                </li>
+              </ul>
+
+              <ul className="!ml-[-30px] sm:!ml-0">
+                <li>
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> Age: </strong>
+                  <span>1 May 1995</span>
+                </li>
+                <li className="my-2 ">
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> Degree: </strong>
+                  <span>1 May 1995</span>
+                </li>
+                <li className="my-2 ">
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> PhEmailone: </strong>
+                  <span>email@example.com</span>
+                </li>
+                <li>
+                  {" "}
+                  <i className="arrow inline-block text-center">
+                    {ICONS.arrow}
+                  </i>
+                  <strong> Freelance: </strong>
+                  <span>Available</span>
+                </li>
+              </ul>
             </div>
             <p>
               Officiis eligendi itaque labore et dolorum mollitia officiis optio

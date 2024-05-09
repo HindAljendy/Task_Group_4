@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <div className="footer-container">
-      &copy; Copyright{" "}
+    <div className="text-center !bottom-0  w-[80%] left-[19.3%] text-[#fff] bg-gray-900 absolute  ">
+   <p className="pt-4">   &copy; Copyright{" "}
       <strong>
         <span>iPortfolio</span>
-      </strong>
+      </strong></p>
     </div>
   );
 };
