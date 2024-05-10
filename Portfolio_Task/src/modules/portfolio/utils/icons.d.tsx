@@ -3,6 +3,7 @@ import { BiBookContent, BiServer } from "react-icons/bi";
 import { BsInstagram, BsList } from "react-icons/bs";
 import { CiMobile2 } from "react-icons/ci";
 import { FaChevronRight, FaFacebookF, FaLinkedinIn, FaRegFile, FaSkype, FaTwitter } from "react-icons/fa";
+import { GrLogin } from "react-icons/gr";
 import { IoMdClose } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail, MdOutlinePersonOutline } from "react-icons/md";
@@ -25,7 +26,8 @@ export const ICONS = {
     mobile: <CiMobile2 />,
     email: <TfiEmail />,
     list: <BsList />,
-    close: <IoMdClose />
+    close: <IoMdClose />,
+    login: <GrLogin />
 
 
 

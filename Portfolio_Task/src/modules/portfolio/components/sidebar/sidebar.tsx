@@ -3,6 +3,8 @@ import { Image } from "react-bootstrap";
 import { useState } from "react";
 import { IMAGES } from "../../utils/images.d";
 import { ICONS } from "../../utils/icons.d";
+import { Link } from "react-router-dom";
+import Footer from "../footer";
 
 const Sidebar = () => {
   const [active, setActive] = useState("#hero");
@@ -89,7 +91,25 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Contact</span>
         </a>
+        <Link
+          to="/login"
+          onClick={() => setActive("login")}
+          className={`no-underline ${
+            active === "login" ? "text-white" : ""
+          }`}
+        >
+          <i
+            className={`no-underline ${
+              active === "login" ? "!text-[#149ddd]" : ""
+            }`}
+          >
+            {ICONS.login}{" "}
+          </i>{" "}
+          <span className=""> Login</span>
+        </Link>
       </div>
+      <div className="mr-4"> <Footer/></div>
+     
     </>
   );
 };
