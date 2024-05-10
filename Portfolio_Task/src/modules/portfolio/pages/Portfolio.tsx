@@ -1,13 +1,14 @@
 import About from "../components/about"
 import Contact from "../components/contact"
-import Footer from "../components/footer"
-import Sidebar from "../components/sidebar"
+import Hero from "../components/hero"
+import SideBar from "../components/sidebar/sidebar.responsive"
 
 
 const Portfolio = () => {
   return (
     <>
-     <Sidebar/>
+     <SideBar/>
+     <Hero/>
      <About/>
      <Contact/>
      

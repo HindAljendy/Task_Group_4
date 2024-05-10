@@ -11,8 +11,8 @@ const Contact = () => {
           quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
           fugiat sit in iste officiis commodi quidem hic quas.
         </p>
-        <div className="md:flex justify-between my-4 w-[98%] m-auto">
-          <div className="w-[40%] p-[30px] shadow-lg">
+        <div className="md:flex justify-between my-4 w-[98%] m-auto fadding-in">
+          <div className="md:w-[40%] p-[30px] md:my-0 my-2 shadow-lg ">
             <i className="contact-icons">{ICONS.location}</i>
             <h4 className="font-[600] text-[22px] text-[#050d18]">Location:</h4>
             <p className="text-[14px] text-[#173b6c]">
@@ -29,19 +29,46 @@ const Contact = () => {
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
             />
           </div>
-          <div className="w-[58%] p-[30px] shadow-lg">
-            <form>
-              <div className="flex justify-between items-center">
-                <div className="w-[40%]">
+          <div className="md:w-[58%] md:my-0 my-2 p-[30px] shadow-lg ">
+            <form className="w-full ">
+              <div className="flex   gap items-center">
+                <div className="w-full ">
                   <span className="block py-2">Your Name</span>
-                  <input type="text" className="rounded-none border border-separate h-[44px] p-2 " name="name" id="name" required/>
+                  <input
+                    type="text"
+                    className="rounded-none border border-separate h-[44px] p-2 w-full"
+                    name="name"
+                    id="name"
+                    required
+                  />
                 </div>
-                <div className="w-[60%]">
+                <div className="w-full ml-6">
                   <span className="block py-2 ">Your Name</span>
-                  <input className="rounded-none border border-separate h-[44px] w-[60%] p-2" type="email" name="email" id="email"/>
+                  <input
+                    className="rounded-none border border-separate h-[44px]  p-2 w-full"
+                    type="email"
+                    name="email"
+                    id="email"
+                  />
                 </div>
               </div>
-              
+              <span className="block py-2 mt-2">Subject</span>
+              <input
+                type="text"
+                className="w-full rounded-none border border-separate h-[44px] p-2 mb-4"
+                name="subject"
+                id="subject"
+                required
+              />
+              <span>Message</span>
+              <textarea
+                className="w-full rounded-none border  border-separate h-[200px] mt-2"
+                name="message"
+                required
+              />
+              <div className="text-center bg-[#149ddd] border-0 px-[24px] py-[10px] text-[#fff] transition-[.4s] rounded-[4px] max-w-max mx-auto my-4">
+                <button type="submit">Send Message</button>
+              </div>
             </form>
           </div>
         </div>

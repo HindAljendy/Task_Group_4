@@ -10,7 +10,27 @@
     font-family: "Open Sans", sans-serif;
 
 }
+.h-mobile-nav{
+position: fixed;
+right: 15px;
+top: 15px;
+z-index: 9998;
+border: 0;
+font-size: 24px;
+transition: all 0.4s;
+outline: none !important;
+background-color: #149ddd;
+color: #fff;
+width: 40px;
+height: 40px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+line-height: 0;
+border-radius: 50px;
+cursor: pointer;
 
+}
 .H-contacts {
     font-size: 18px;
     display: inline-block;
@@ -80,6 +100,12 @@ color: #173b6c;
     color: #149ddd;
     line-height: 0;
 }
+.nav-animation-in{
+    animation-name: fade-nav-in;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
 
 .fadding-left{
     animation-name: fade-left;
@@ -115,6 +141,12 @@ color: #173b6c;
     background: #149ddd;
     color: #fff;
     cursor: pointer;
+}
+
+.fadding-in{
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: linear;    
 }
 
 
@@ -163,5 +195,37 @@ color: #173b6c;
     100%{
         transform: translateX(0px);
         opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(20px);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade-nav-in {
+    0%{
+        transform: translateX(-200px);
+        
+    }
+    50%{
+        transform: translateX(-100px);
+
+    }
+
+    100%{
+        transform: translateX(0px);
+        
     }
 }
