@@ -1,0 +1,88 @@
+.HJ_topbar {
+    height: 3.5rem;
+    background-color: var(--gray-60);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.44rem;
+    padding-right: 4.12rem;
+    color: var(--dark_blue);
+    font-family: var(--open-sans);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+}
+.HJ_topbar .HJ_titleSections{
+    color: var(--dark_blue);
+    font-size: 1.125rem;
+    font-family: var(--open-sans);
+}
+
+.HJ_topbar .HJ_topbar_icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+
+}
+
+.HJ_topbar .HJ_topbar_search {
+    position: relative;
+
+}
+
+.HJ_topbar .HJ_topbar_search .HJ_search {
+    width: 13.75rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--dark_blue);
+    left: 2.2rem;
+    bottom: 0.5rem;
+    position: relative;
+
+}
+
+.HJ_topbar .HJ_topbar_search input::placeholder {
+    color: var(--dark_blue);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    left: 1.5rem;
+    bottom: 0.2rem;
+
+}
+
+.HJ_topbar .HJ_topbar_search .HJ_image_search {
+    position: absolute;
+    left: 2.3rem;
+    bottom: 0.5rem;
+}
+
+
+.HJ_topbar .HJ_MenuIcon {
+    display: none;
+}
+
+.HJ_topbar .HJ_Show_titleSections{
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+    .HJ_topbar .HJ_MenuIcon {
+        display: block;
+        cursor: pointer;
+    }
+
+   .HJ_topbar .HJ_IconBars {
+        font-size: 2rem;
+        color: #1e1e1e;
+    }
+
+    .HJ_topbar .HJ_Show_titleSections{
+        display: none;
+    }
+
+
+}
