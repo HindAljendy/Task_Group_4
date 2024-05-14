@@ -74,7 +74,7 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Portfolio</span>
         </a>
-        {/* <a href="#services" ><i>{ICONS.services} </i> <span className="" >  Services</span></a> */}
+        {/* <a href="#skills" ><i>{ICONS.services} </i> <span className="" >  Skills</span></a> */}
         <a
           href="#contact"
           onClick={() => setActive("#contact")}

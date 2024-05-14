@@ -2,7 +2,41 @@ import { Image } from "react-bootstrap";
 import { ICONS } from "../utils/icons.d";
 import { IMAGES } from "../utils/images.d";
 import "./../../../index.css";
+import { useEffect, useRef, useState } from "react";
+import { useSpring, animated } from 'react-spring';
+
 const About = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.8}
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const animationPropsleft = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'translateX(0px)' : 'translateX(-50px)',
+  });
+
+  const animationPropsright = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'translateX(0px)' : 'translateX(50px)',
+  });
   return (
     <div id="about" className="md:w-[80%] md:ml-[300px] my-6">
       <div className="px-4 ">
@@ -14,10 +48,18 @@ const About = () => {
           fugiat sit in iste officiis commodi quidem hic quas.
         </p>
         <div className="my-2 md:flex items-center justify-between">
-          <div className="fadding-left md:w-[30%] w-[95%] mx-auto md:my-0 my-2 ">
+
+          <div ref={sectionRef} className=" md:w-[30%] w-[95%] mx-auto md:my-0 my-2 ">
+          <animated.div style={animationPropsleft}>
+
             <Image src={IMAGES.profile} alt="" />
+            </animated.div>
+
           </div>
-          <div className="fadding-right md:w-[65%] w-[95%] md:mr-auto md:px-4">
+
+          <div className="md:w-[65%] w-[95%] md:mr-auto md:px-4">
+           <animated.div style={animationPropsright}>
+
             <h3 className=" text-[#173b6c] font-[700] text-[26px]">
               UI/UX Designer &amp; Web Developer.
             </h3>
@@ -105,8 +147,12 @@ const About = () => {
               cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium
               dolores.
             </p>
+            </animated.div>
+
           </div>
+
         </div>
+
       </div>
     </div>
   );

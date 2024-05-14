@@ -107,18 +107,6 @@ color: #173b6c;
 }
 
 
-.fadding-left{
-    animation-name: fade-left;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-}   
-
-.fadding-right{
-    animation-name: fade-right;
-    animation-duration: 1s;
-    animation-timing-function: linear;  
-}
-
 
 
 /* contact part */
@@ -143,11 +131,7 @@ color: #173b6c;
     cursor: pointer;
 }
 
-.fadding-in{
-    animation-name: fade-in;
-    animation-duration: 1s;
-    animation-timing-function: linear;    
-}
+
 
 
 
@@ -163,55 +147,6 @@ color: #173b6c;
 
 
 /* animation */
-@keyframes fade-left {
-    0%{
-        transform: translateX(-40px);
-        opacity: 0;
-    }
-
-    50%{
-        transform: translateX(-20px);
-        opacity: 0.5;
-
-    }
-
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-@keyframes fade-right {
-    0%{
-        transform: translateX(40px);
-        opacity: 0;
-    }
-
-    50%{
-        transform: translateX(20px);
-        opacity: 0.5;
-
-    }
-
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in {
-    0%{
-        transform: translateY(40px);
-        opacity: 0;
-    }
-    50%{
-        transform: translateY(20px);
-        opacity: 0.5;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
 
 
 @keyframes fade-nav-in {

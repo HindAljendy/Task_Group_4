@@ -1,6 +1,34 @@
+import { useEffect, useRef, useState } from "react";
 import { ICONS } from "../utils/icons.d";
+import { useSpring, animated } from 'react-spring';
 
 const Contact = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.8}
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const animationProps = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'translateY(0px)' : 'translateY(50px)',
+  });
   return (
     <div id="contact" className="md:w-[80%] md:ml-[300px] my-[10%]">
       <div className="px-4">
@@ -11,7 +39,9 @@ const Contact = () => {
           quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
           fugiat sit in iste officiis commodi quidem hic quas.
         </p>
-        <div className="md:flex justify-between my-4 w-[98%] m-auto fadding-in">
+        <animated.div style={animationProps}>
+
+        <div  ref={sectionRef} className="md:flex justify-between my-4 w-[98%] m-auto ">
           <div className="md:w-[40%] p-[30px] md:my-0 my-2 shadow-lg ">
             <i className="contact-icons">{ICONS.location}</i>
             <h4 className="font-[600] text-[22px] text-[#050d18]">Location:</h4>
@@ -72,6 +102,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+        </animated.div>
       </div>
     </div>
   );
