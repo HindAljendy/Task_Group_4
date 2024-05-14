@@ -4,7 +4,7 @@ import { IMAGES } from "../utils/images.d";
 import "./../../../index.css";
 const About = () => {
   return (
-    <div id="about" className="md:w-[80%] ml-auto my-6">
+    <div id="about" className="md:w-[80%] md:ml-[300px] my-6">
       <div className="px-4 ">
         <h3 className="section-title">About</h3>
         <p>

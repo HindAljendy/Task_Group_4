@@ -2,7 +2,7 @@ import { ICONS } from "../utils/icons.d";
 
 const Contact = () => {
   return (
-    <div id="contact" className="md:w-[80%] ml-auto my-[10%]">
+    <div id="contact" className="md:w-[80%] md:ml-[300px] my-[10%]">
       <div className="px-4">
         <h3 className="section-title">Contact</h3>
         <p>
