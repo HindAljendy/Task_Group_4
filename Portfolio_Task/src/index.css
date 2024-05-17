@@ -31,6 +31,43 @@
     cursor: pointer;
 
 }
+/* hero part */
+#hero{
+    height: 100vh;
+    background: url("assets/hero-bg.jpg") top center;
+    background-size: cover; 
+}
+#hero:before {
+ 
+    content: "";
+    background: rgba(5, 13, 24, 0.3);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  @media only screen and (max-width: 500px) and (min-width: 300px){  
+  #hero {
+    background: url("assets/hero-bg-responsive.jpg") top center;  
+    background-size: cover; 
+  }
+  }
+  @media(min-width: 1024px){
+    #hero:before {
+        width:80%;
+        margin-left: 300px;
+        margin-right:0;
+    }
+  }
+
+  /* contact part */
 .H-contacts {
     font-size: 18px;
     display: inline-block;

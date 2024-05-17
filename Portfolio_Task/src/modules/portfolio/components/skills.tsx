@@ -33,7 +33,7 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="md:w-[80%]  md:ml-[300px] my-[10%] py-[5%] bg-[#f5f8fd]"
+      className="lg:w-[80%] w-full lg:ml-[300px] my-[10%] py-[5%] bg-[#f5f8fd]"
     >
       <div className="px-4">
         <h3 className=" section-title ">Skills</h3>
@@ -45,10 +45,10 @@ const Skills = () => {
           </p>
           <animated.div style={animationProps}>
             <div  ref={sectionRef} className="grid md:grid-cols-2 gap-6">
-            <div className=""><span className="">HTML</span> <ProgressBar  animated now={100} label="100%" /></div> 
+            <div className=""><span className="">React js</span> <ProgressBar  animated now={100} label="100%" /></div> 
             
-            <div className=""><span>CSS</span>  <ProgressBar animated now={95} label="95%" /></div>
-            <div className=""><span>React js</span>  <ProgressBar animated now={95} label="95%" /></div>
+            <div className=""><span>Typescript</span>  <ProgressBar animated now={95} label="95%" /></div>
+            <div className=""><span>Rest api</span>  <ProgressBar animated now={95} label="95%" /></div>
             <div className=""><span>Laravel</span>  <ProgressBar animated now={80} label="80%" /></div>
             </div>
             </animated.div>

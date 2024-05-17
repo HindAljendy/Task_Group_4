@@ -41,7 +41,7 @@ const Contact = () => {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -60,7 +60,7 @@ const Contact = () => {
     transform: isVisible ? "translateY(0px)" : "translateY(50px)",
   });
   return (
-    <div id="contact" className="md:w-[80%] md:ml-[300px] my-[10%]">
+    <div id="contact" className="lg:w-[80%] lg:ml-[300px] my-[10%]">
       <div className="px-4">
         <h3 className="section-title">Contact</h3>
         <p>
@@ -74,7 +74,7 @@ const Contact = () => {
             ref={sectionRef}
             className="md:flex justify-between my-4 w-[98%] m-auto "
           >
-            <div className="md:w-[40%] p-[30px] md:my-0 my-2 shadow-lg ">
+            <div className="md:w-[40%] p-[30px] md:my-0 my-2 shadow-sm">
               <i className="contact-icons">{ICONS.location}</i>
               <h4 className="font-[600] text-[22px] text-[#050d18]">
                 Location:
@@ -93,7 +93,7 @@ const Contact = () => {
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
               />
             </div>
-            <div className="md:w-[58%] md:my-0 my-2 p-[30px] shadow-lg ">
+            <div className="md:w-[58%] md:my-0 my-2 p-[30px] shadow-sm">
               <form method="post" className="w-full ">
                 <div className="lg:flex   gap items-center">
                   <div className="w-full ">

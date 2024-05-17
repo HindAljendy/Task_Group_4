@@ -5,7 +5,7 @@ const PortfolioSection = () => {
   return (
     <div
       id="portfolio"
-      className="md:w-[80%]  md:ml-[300px] my-[10%] py-[5%] bg-[#f5f8fd]"
+      className="lg:w-[80%]  lg:ml-[300px] my-[10%] py-[5%] bg-[#f5f8fd]"
     >
       <div className="px-4">
         <h3 className=" section-title ">Portfolio</h3>
