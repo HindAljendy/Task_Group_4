@@ -1,8 +1,7 @@
 
 const PortfolioDitails = () => {
   return (
-    <div>
-      
+    <div> 
     </div>
   )
 }
