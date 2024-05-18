@@ -5,7 +5,8 @@ export type InputProps = {
     value: string,
     setValue: any,
     errorRequest: any,
-    field: string
+    field: string,
+    style: string
 }
 
 export type Project = {

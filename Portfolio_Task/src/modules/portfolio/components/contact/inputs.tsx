@@ -8,6 +8,7 @@ const Inputs = ({
   setValue,
   errorRequest,
   field,
+  style,
 }: InputProps) => {
   return (
     <div className="main-input">
@@ -16,6 +17,7 @@ const Inputs = ({
           <textarea
             value={value}
             name={field}
+            className={style}
             autoFocus={errorRequest?.hasOwnProperty(field)}
             onChange={(e) => setValue(e.target.value)}
             required
@@ -24,6 +26,7 @@ const Inputs = ({
           <textarea
             value={value}
             name={field}
+            className={style}
             autoFocus={errorRequest?.hasOwnProperty(field)}
             onChange={(e) => setValue(e.target.value)}
           ></textarea>
@@ -33,6 +36,7 @@ const Inputs = ({
           type={type}
           name={field}
           value={value}
+          className={style}
           autoFocus={errorRequest?.hasOwnProperty(field)}
           onChange={(e) => setValue(e.target.value)}
           required
@@ -41,6 +45,7 @@ const Inputs = ({
         <input
           type={type}
           name={field}
+          className={style}
           value={value}
           autoFocus={errorRequest?.hasOwnProperty(field)}
           onChange={(e) => setValue(e.target.value)}

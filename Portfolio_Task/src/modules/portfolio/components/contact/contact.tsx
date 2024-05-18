@@ -4,7 +4,6 @@ import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import { API } from "../../../../api/axios";
 import Inputs from "./inputs";
-import { ContactStyles } from "./styles";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -15,25 +14,22 @@ const Contact = () => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async (event: React.FormEvent) => {
+    event.preventDefault(); 
     const data = {
       client_name: name,
       client_email: email,
       message_subject: subject,
       message_description: message,
     };
-    axios
-      .post(API.POST.addmessage, data)
-      .then((res) => {
-        setError({});
-        window.scrollTo(0, 0);
-      })
-      .catch((err) => {
-        setError({});
-        if (err.response.data.errors) {
-          setError(err.response.data.errors);
-        }
-      });
+
+    try {
+      const res = await axios.post(API.POST.addmessage, data);
+      setError({});
+      window.scrollTo(0, 0);
+    } catch (err) {
+      console.error("error in the message: ", err);
+    }
   };
 
   useEffect(() => {
@@ -59,6 +55,7 @@ const Contact = () => {
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? "translateY(0px)" : "translateY(50px)",
   });
+
   return (
     <div id="contact" className="lg:w-[80%] lg:ml-[300px] my-[10%]">
       <div className="px-4">
@@ -95,11 +92,10 @@ const Contact = () => {
             </div>
             <div className="md:w-[58%] md:my-0 my-2 p-[30px] shadow-sm">
               <form method="post" className="w-full ">
-                <div className="lg:flex   gap items-center">
+                <div className="lg:flex gap items-center">
                   <div className="w-full ">
                     <span className="block py-2">Your Name</span>
-                    <div className={ContactStyles.info}>
-                      {" "}
+                    
                       <Inputs
                         type={"text"}
                         errorRequest={error}
@@ -108,12 +104,12 @@ const Contact = () => {
                         field={"client_name"}
                         required={true}
                         textarea={false}
+                        style="rounded-none border border-separate h-[44px]  p-2 w-full bg-transparent"
                       />
-                    </div>
+                   
                   </div>
                   <div className="w-full lg:ml-6">
                     <span className="block py-2 ">Your email</span>
-                    <div className="rounded-none border border-separate h-[44px]  p-2 w-full">
                       <Inputs
                         type={"email"}
                         errorRequest={error}
@@ -122,13 +118,11 @@ const Contact = () => {
                         field={"client_email"}
                         required={true}
                         textarea={false}
+                        style="rounded-none border border-separate h-[44px]  p-2 w-full bg-transparent"
                       />
-                    </div>
                   </div>
                 </div>
                 <span className="block py-2 mt-2">Subject</span>
-                <div className={ContactStyles.subject}>
-                  {" "}
                   <Inputs
                     type={"textarea"}
                     errorRequest={error}
@@ -137,11 +131,9 @@ const Contact = () => {
                     field={"message_subject"}
                     required={true}
                     textarea={true}
-                  />{" "}
-                </div>
-
+                    style="block py-2 mt-2 border w-full px-2"
+                  />
                 <span>Message</span>
-                <div className={ContactStyles.message}>
                 <Inputs
                   type={"textarea"}
                   errorRequest={error}
@@ -150,9 +142,9 @@ const Contact = () => {
                   field={"message_description"}
                   required={true}
                   textarea={true}
-                                  />
-                </div>
-                <div className="text-center bg-[#149ddd] border-0 px-[24px] py-[10px] text-[#fff] transition-[.4s] rounded-[4px] max-w-max mx-auto my-4">
+                  style="w-full rounded-none border p-2 border-separate h-[200px] mt-2"
+                   />            
+                <div className="text-center bg-[#149ddd] border-0 px-[24px] hover:bg-[#149dddc8] py-[10px] text-[#fff] transition-[.4s] rounded-[4px] max-w-max mx-auto my-4">
                   <button type="submit" onClick={handleSendMessage}>
                     Send Message
                   </button>

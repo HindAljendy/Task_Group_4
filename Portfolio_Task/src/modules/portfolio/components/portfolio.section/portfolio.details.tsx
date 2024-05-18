@@ -1,26 +1,22 @@
-import { Link } from "react-router-dom";
 import { Project } from "../../configs/global";
 
-const PortfolioDitails: React.FC<Project> = ({id, image, year, description, title}) => {
+const PortfolioDetails: React.FC<Project> = ({ id, image, year, description, title }) => {
   return (
     <div>
-      <Link to={"/projects"} key={id}>
-        <div className="w-full min-h-[35vh] bg-white bg-opacity-20 backdrop-blur border  shadow-[bg-slate-700] rounded-lg p-3 shadow-inner">
+        <div  className="W-full bg-[#fff] rounded-[10px] p-[20px]">
           <img
             src={image}
-            width={500}
-            height={300}
-            className="rounded w-full"
-            alt=""
+            className="rounded-[15px] overflow-hidden w-full"
+            alt={title}
           />
           <br />
-          <h1 className="font-Poppins text-[16px] ">{title}</h1>
-        <p>{description}</p>
-        <span>{year}</span>
+          <h1 className="w-[95%] text-[19px] my-[25px] mr-[20%] font-Poppins font-bold ">
+           {title}</h1>
+          <p className="py-4 ">{description}</p>
+          <span>{year}</span>
         </div>
-      </Link>
     </div>
   );
 };
 
-export default PortfolioDitails;
+export default PortfolioDetails;
