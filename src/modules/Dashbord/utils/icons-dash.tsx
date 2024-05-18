@@ -6,6 +6,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { FaPlusSquare } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { MdViewAgenda } from "react-icons/md";
+import { FaArrowLeft } from "react-icons/fa6";
 
 export const ICONS = {
     user_edit: <FaUserEdit />,
@@ -15,7 +16,8 @@ export const ICONS = {
     delete: <MdDeleteForever />,
     plus: <FaPlusSquare />,
     edit: <FaEdit/>,
-    view:<MdViewAgenda/>
+    view:<MdViewAgenda/>,
+    arrow_left:<FaArrowLeft />
 
 
 }
