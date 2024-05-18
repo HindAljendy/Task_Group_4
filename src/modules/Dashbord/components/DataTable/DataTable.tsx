@@ -5,6 +5,7 @@ import { dev } from '../../utils/back_urls';
 import './DataTable.scss';
 import { useState, useEffect } from 'react';
 import * as projectServices from "../../services/projectsServices"
+import { useNavigate } from 'react-router-dom';
 
 interface Project {
     id: number;
@@ -40,6 +41,11 @@ const projectsColumns: GridColDef[] = [
 // const messagesColumns: GridColDef[] = [];
 
 const DataTable: React.FC<DataTableProps> = ({ type }) => {
+    const navigate = useNavigate();
+
+    const goToEditPage= (id:any)=>{
+        navigate(`/dashboard/projects/edit/${id}`)
+    }
     const [projects_rows, setProjectsRows] = useState<Project[]>([]);
     // const [messages_rows, setMessagesRow] = useState<any[]>([]);
 
@@ -47,9 +53,9 @@ const DataTable: React.FC<DataTableProps> = ({ type }) => {
     var columns: GridColDef[] = [];
 
     useEffect(() => {
-        const fetchData = async () => {
+        const getAllData = async () => {
             try {
-                const response = await projectServices.getAllProjects();
+                const response = await projectServices.getAllProjects();// call the api 
                 const projectsData: Project[] = response;
                 setProjectsRows(projectsData);
             } catch (error) {
@@ -57,7 +63,7 @@ const DataTable: React.FC<DataTableProps> = ({ type }) => {
             }
         };
 
-        fetchData();
+        getAllData();
     }, []);
 
     const projectsActionColumn: GridColDef = {
@@ -65,10 +71,10 @@ const DataTable: React.FC<DataTableProps> = ({ type }) => {
         headerName: "Action",
         sortable: false,
         width: 130,
-        renderCell: () => {
+        renderCell: (params) => {
             return (
                 <div className="cellAction" style={{ display: 'flex' }}>
-                    <div className="editIconSection">{ICONS.edit}</div>
+                    <div className="editIconSection" onClick={()=>goToEditPage(params.row.id)}>{ICONS.edit}</div>
                     <div className="viewIconSection">{ICONS.view}</div>
                     <div className="deleteIconSection">{ICONS.delete}</div>
                 </div>

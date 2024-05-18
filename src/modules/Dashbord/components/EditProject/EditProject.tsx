@@ -1,22 +1,65 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as projectServices from "../../services/projectsServices"
 import { ICONS } from '../../utils/icons-dash';
+import { dev } from '../../utils/back_urls';
 
-import './AddProject.scss'
+import './EditProject.scss'
 
-const AddProject = () => {
+// interface Project {
+//     id: number,
+//     title: string,
+//     description: string,
+//     category: string;
+//     year: number;
+//     image: string,
+// }
+
+const EditProject = () => {
 
     const navigate = useNavigate();
+    const param = useParams();
+
+    console.log(`this is  ${param.id}`);
+
+
+    // get Project Data
+    const [project, setProject] = useState<any>({});
+    useEffect(() => {
+        const getProjectData = async () => {
+            try {
+                const response = await projectServices.getProjectById(param.id);
+                console.log(response);
+                let data = {
+                    id: response.data.id,
+                    title: response.data.title,
+                    description: response.data.description,
+                    category: response.data.category,
+                    year: response.data.year,
+                    image: response.data.image,
+                };
+                setProject(data);
+                console.log(project);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        getProjectData();
+    }, []);
+
+    //_________________________________________________________________________________________________________
+    //edit data
+
     const [title, setTitle] = useState("");
     const [year, setYear] = useState("");
     const [category, setCategory] = useState("");
     const [description, setDescription] = useState("");
-    const [image, setImage] = useState({});
+    const [image, setImage] = useState<File | null>(null);
 
     const [errorMessage, setErrorMessage] = useState('');
 
-    const sendData = (event: any) => {
+    const sendData = async (event: any) => {
         event.preventDefault();
         let data = {
             title: title,
@@ -27,7 +70,7 @@ const AddProject = () => {
         }
         console.log(data);
         try {
-            projectServices.addNewProject(data);
+            await projectServices.addNewProject(data);
             navigate("/dashboard/projects");
         } catch (error) {
             console.error('Error creating new project:', error);
@@ -46,44 +89,46 @@ const AddProject = () => {
     //   };
 
     return (
-        <div className="BY_addProject">
+
+        <div className="BY_editProject">
             <div className="container">
                 <div className='topSection'>
-                    <h2>Add New Project</h2>
+                    <h2>Edit Project</h2>
                 </div>
                 <div className="contentSection">
                     <form onSubmit={(event) => sendData(event)} className='form'>
                         <div className='field long'>
                             <label>
-                                Title <sup>*</sup>
+                                Title
                             </label>
-                            <input type='text' placeholder='Portfolio Project' onChange={(e) => { setTitle(e.target.value) }} />
+                            {/*  */}
+                            <input type='text' placeholder='Portfolio Project' defaultValue={project.title} onChange={(e) => { setTitle({ ...project, title: e.target.value}) }} />
                             {/* <p>test</p> */}
                         </div>
                         <div className='field'>
                             <label>
-                                Year <sup>*</sup>
+                                Year
                             </label>
-                            <input type='text' placeholder='2022' onChange={(e) => { setYear(e.target.value) }} />
+                            <input type='text' placeholder='2022' defaultValue={project.year} onChange={(e) => { setYear(e.target.value) }} />
                             {/* <p>test</p> */}
                         </div>
                         <div className='field'>
                             <label>
-                                Category <sup>*</sup>
+                                Category
                             </label>
-                            <input type='text' placeholder='Full Stack' onChange={(e) => { setCategory(e.target.value) }} />
+                            <input type='text' placeholder='Full Stack' defaultValue={project.category} onChange={(e) => { setCategory(e.target.value) }} />
                             {/* <p>test</p> */}
                         </div>
                         <div className='field long'>
                             <label>
-                                Description <sup>*</sup>
+                                Description 
                             </label>
-                            <input type='text' placeholder='This Project implements ....' onChange={(e) => { setDescription(e.target.value) }} />
+                            <input type='text' placeholder='This Project implements ....' defaultValue={project.description} onChange={(e) => { setDescription(e.target.value) }} />
                             {/* <p>test</p> */}
                         </div>
                         <div className='field long'>
-                            <label > Image <sup>*</sup></label>
-
+                            <label > Image </label>
+                            <img src={`${dev.url.PUBLIC_URL}${project.image}`} alt="" className='project_image' />
                             <input type='file' id='image'
                                 onChange={(e) => {
                                     if (e.target.files && e.target.files.length > 0) {
@@ -92,23 +137,25 @@ const AddProject = () => {
                                 }} />
                             <label htmlFor='image' className='image_label'>
 
-                                Upload an Image
+                                Change Image
 
                                 {/* {image && <img src={image} alt="Uploaded" />} */}
                             </label>
                             {/* <p>test</p> */}
                         </div>
 
-                        {/* {errorMessage && <div className="error-message">{errorMessage}</div>} */}
+                        {errorMessage && <div className="error-message">{errorMessage}</div>}
                         <div className="buttonSection">
-                            <input type="submit" value="Submit" className='submit' />
+
+
+                            <input type="back" value="Submit" className='submit' />
 
                         </div>
                     </form>
 
                 </div>
                 <div className="bottomSection">
-                    <button value="Back" className='back' onClick={goBack }> {ICONS.arrow_left}Back</button>
+                    <button value="Back" className='back' onClick={goBack}> {ICONS.arrow_left}Back</button>
                 </div>
             </div>
 
@@ -117,4 +164,4 @@ const AddProject = () => {
     )
 }
 
-export default AddProject;
+export default EditProject;
