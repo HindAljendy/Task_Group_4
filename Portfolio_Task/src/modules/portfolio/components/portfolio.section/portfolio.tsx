@@ -1,7 +1,18 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { API } from "../../../../api/axios";
+import PortfolioDitails from "./portfolio.details";
 
 const PortfolioSection = () => {
-  const [active,setActive] = useState("all")
+  const [active, setActive] = useState("all");
+  const [projects, setProjects] = useState([]);
+  const [Category, setCategory] = useState("");
+
+  useEffect(() => {
+    axios.get(API.GET.projects).then((res) => {
+      setProjects(res.data.data);
+    });
+  }, []);
   return (
     <div
       id="portfolio"
@@ -15,12 +26,47 @@ const PortfolioSection = () => {
           quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
           fugiat sit in iste officiis commodi quidem hic quas.
         </p>
-        <div className="flex items-center gap-6 rounded-[15px] bg-[#fff] w-fit p-3">
-          <span onClick={()=>setActive("all")} className={`cursor-pointer ${active === "all" ? "text-[blue]":""}`}>ALL</span>
-          <span onClick={()=>setActive("app")} className={`cursor-pointer ${active === "app" ? "text-[blue]":""}`}>App</span>
-          <span onClick={()=>setActive("web")} className={`cursor-pointer ${active === "web" ? "text-[blue]":""}`}>Web</span>
-          <span onClick={()=>setActive("card")} className={`cursor-pointer ${active === "card" ? "text-[blue]":""}`}>Card</span>
-        </div>
+        {projects.map((i: any, index: number) => (
+          <div
+                                className="flex items-center gap-6 rounded-[15px] bg-[#fff] w-fit p-3"
+          >
+            <span
+              onClick={() => setActive(i.category)}
+              className={`cursor-pointer ${
+                active === i.category ? "text-[blue]" : ""
+              }`}
+            >
+              {i.category}
+            </span>
+          </div>
+        ))}
+
+        {projects.length == 0 && (
+          <p className="flex flex-col align-middle items-center text-red-600">
+            No projects yet
+          </p>
+        )}
+        {projects?.map((item: any, index: number) => (
+          <>
+            {active === item.category ? (
+              <div
+                className="sm:grid md:grid-cols-3 sm:grid-cols-2 gap-3"
+                key={index}
+              >
+                <PortfolioDitails
+                  id={item.id}
+                  year={item.year}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  category={item.category}
+                />
+              </div>
+            ) : (
+              ""
+            )}
+          </>
+        ))}
       </div>
     </div>
   );
