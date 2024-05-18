@@ -27,9 +27,7 @@ const PortfolioSection = () => {
           fugiat sit in iste officiis commodi quidem hic quas.
         </p>
         {projects.map((i: any, index: number) => (
-          <div
-                                className="flex items-center gap-6 rounded-[15px] bg-[#fff] w-fit p-3"
-          >
+          <div className="flex items-center gap-6 rounded-[15px] bg-[#fff] w-fit p-3"key={index} >
             <span
               onClick={() => setActive(i.category)}
               className={`cursor-pointer ${
