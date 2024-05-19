@@ -44,7 +44,7 @@ const Skills = () => {
           fugiat 
           </p>
           <animated.div style={animationProps}>
-            <div  ref={sectionRef} className="grid grid-cols-2 gap-6">
+            <div  ref={sectionRef} className="grid md:grid-cols-2 gap-6">
             <div className=""><span className="">HTML</span> <ProgressBar  animated now={100} label="100%" /></div> 
             
             <div className=""><span>CSS</span>  <ProgressBar animated now={95} label="95%" /></div>

@@ -1,11 +1,11 @@
 .HJ-sidebar{
     background-color: var( --gray-50); 
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
-    max-width: 16.7%;
+    width: 20vw;
+    height: 100vh;
     top: 0;
     left: 0;
     bottom: 0;
@@ -41,7 +41,7 @@
 }
 .HJ-sidebar .HJ-sidebar-list{
     list-style: none;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-right: 50px;
 
  
@@ -58,7 +58,7 @@
 
 .HJ-sidebar .HJ-sidebar-list .HJ-sidebar-list-item a{
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.6);
+    color:var(--light) ;
     display: flex; 
     flex-direction: row;
     justify-content: flex-start;
@@ -66,3 +66,36 @@
     gap: 12px;
 
 } 
+
+.HJ-sidebar .HJ-sidebar-list .HJ_logout{
+    color:var(--light) ;
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+@media screen and (max-width: 850px) {
+   
+    .HJ-sidebar {
+        box-shadow: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--gray-50);
+        width: 30%;
+        position: absolute;
+        top: 56px;
+        border: 1 solid white;
+        border-radius: none;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+
+    }
+
+    .HJ-sidebar.active {
+        opacity: 1;
+        transition: 0.5s ease-in-out;
+    }
+
+}

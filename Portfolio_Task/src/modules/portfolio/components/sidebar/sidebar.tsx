@@ -28,7 +28,8 @@ const Sidebar = () => {
         <span className="H-contacts !pl-[8px]">{ICONS.skype}</span>
         <span className="H-contacts !pl-[10px]">{ICONS.linkedin}</span>
       </div>
-      <div className="my-6 H-nav">
+      <div className="my-1 H-nav">
+      
         <a
           href="#hero"
           onClick={() => setActive("#hero")}
@@ -43,6 +44,8 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Home</span>
         </a>
+      
+
         <a
           href="#about"
           onClick={() => setActive("#about")}
@@ -57,8 +60,21 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> About</span>
         </a>
-        {/* <a href="#resume" ><i>{ICONS.resume} </i> <span className="" >  Resume</span></a> */}
+
         <a
+          href="#skills"
+          onClick={() => setActive("#skills")}
+          className={`no-underline ${active === "#skills" ? "text-white" : ""}`}
+        >
+          <i
+            className={`no-underline ${
+              active === "#skills" ? "!text-[#149ddd]" : ""
+            }`}
+          >
+            {ICONS.services}{" "}
+          </i>{" "}
+          <span className=""> Skills</span>
+        </a>        <a
           href="#portfolio"
           onClick={() => setActive("#portfolio")}
           className={`no-underline ${
@@ -74,6 +90,7 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Portfolio</span>
         </a>
+     
         {/* <a href="#skills" ><i>{ICONS.services} </i> <span className="" >  Skills</span></a> */}
         <a
           href="#contact"
@@ -107,8 +124,10 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Login</span>
         </Link>
+     
       </div>
       <div className="mr-4"> <Footer/></div>
+
      
     </>
   );

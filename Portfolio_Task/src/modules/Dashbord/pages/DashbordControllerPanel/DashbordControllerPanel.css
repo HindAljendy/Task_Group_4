@@ -1,0 +1,30 @@
+.HJ_dashboord{
+    display: flex;
+}
+.HJ_container{
+    width: 80vw;
+    height: 100vh;
+   
+
+}
+.HJ_sidebarContent{
+    width: 20vw;
+    height: 100vh;
+}
+
+@media screen and (max-width: 850px) {
+    .HJ_dashboord {
+        position: relative;
+    }
+
+    .HJ_container {
+        position: absolute;
+        width: 100vw;
+       
+    }
+
+    .HJ_sidebarContent {
+        max-width: 100%;
+    }
+    
+}
