@@ -10,6 +10,17 @@
   --dark_blue: #124E66;
   --light: #D3D9D4;
   --absolute-White: #FFF;
+  --light_blue:#0d5f80;
+  --light_gray: #bec0be;
+
+  --delete_button:rgb(181, 7, 7);
+
+  --blue_icon:rgb(25, 25, 249);
+  --dark_blue_icon:rgb(3, 3, 161);
+  --green_icon:green;
+  --dark_green_icon:rgb(0, 97, 29);
+  --red_icon:red;
+  --dark_red_icon:rgb(134, 3, 3);
 
   --open-sans: "Open Sans", sans-serif;;
   --roboto: "Roboto", sans-serif;
