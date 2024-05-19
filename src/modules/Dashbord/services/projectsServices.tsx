@@ -3,6 +3,7 @@ import { dev } from '../utils/back_urls';
 
 const url = dev.url.BASE_URL;
 const url_projects = url + "projects";
+const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMzI3ODcsImV4cCI6MTcxNjEzNjM4NywibmJmIjoxNzE2MTMyNzg3LCJqdGkiOiJBWUs2bFVSODdtd2tWZUQxIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ZXIxMQCkwMtEcOeAJzVd7XvIHg1scGd8pdyOoyOH_I";
 
 
 export async function getAllProjects() {
@@ -22,7 +23,6 @@ export async function getAllProjects() {
 
 export async function addNewProject(data: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.post(url_projects, data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -44,7 +44,6 @@ export async function addNewProject(data: any) {
 
 export async function editProject(data: any, id: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.post(url_projects + '/' + id, data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -67,7 +66,6 @@ export async function editProject(data: any, id: any) {
 
 export async function getProjectById(id: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.get(url_projects + '/' + id,{
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -90,7 +88,6 @@ export async function getProjectById(id: any) {
 
 export async function deleteProjectById(id: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.delete(url_projects + '/' + id,{
             headers: {
                 'Content-Type': 'multipart/form-data',

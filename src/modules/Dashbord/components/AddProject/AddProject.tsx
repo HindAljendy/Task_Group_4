@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as projectServices from "../../services/projectsServices"
 import { ICONS } from '../../utils/icons-dash';
@@ -37,13 +37,7 @@ const AddProject = () => {
     const goBack = () => {
         navigate("/dashboard/projects");
     }
-    // const addImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     if (e.target.files && e.target.files[0]) {
-    //       setImage(URL.createObjectURL(e.target.files[0]));
-    //     } else {
-    //       setImage({});
-    //     }
-    //   };
+
 
     return (
         <div className="BY_addProject">
@@ -88,13 +82,15 @@ const AddProject = () => {
                                 onChange={(e) => {
                                     if (e.target.files && e.target.files.length > 0) {
                                         setImage(e.target.files[0]);
-                                    }
+                                        
+                                        // localStorage.setItem('imageDataUrl', e.target.files[0].name);
+                                        
+                                    };
+
                                 }} />
                             <label htmlFor='image' className='image_label'>
-
-                                Upload an Image
-
-                                {/* {image && <img src={image} alt="Uploaded" />} */}
+                                 Upload an Image 
+                                {/* {showImage && <img src={localStorage.getItem('imageDataUrl')?? ""} alt="Uploaded" />} */}
                             </label>
                             <p>png, jpg, jpeg, gif only</p>
                         </div>

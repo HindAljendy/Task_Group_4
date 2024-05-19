@@ -74,7 +74,7 @@ const EditProject = () => {
             await projectServices.editProject(data, param.id);
             navigate("/dashboard/projects");
         } catch (error) {
-            console.error('Error creating new project:', error);
+            console.error('Error Updating the project:', error);
             setErrorMessage('Not valid input, try again');
         }
     }

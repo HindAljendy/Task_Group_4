@@ -118,6 +118,15 @@
                         }
                     }
 
+                    .project_image {
+                        padding: 10px;
+                        width: 60%;
+                        background-color: var(--light);
+                        display: flex;
+                        justify-content: center;
+                        align-self: center;
+                    }
+
                     &.long {
                         grid-column: span 2;
                         //background-color: red
