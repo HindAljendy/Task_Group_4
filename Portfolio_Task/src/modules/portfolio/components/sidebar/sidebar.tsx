@@ -28,7 +28,8 @@ const Sidebar = () => {
         <span className="H-contacts !pl-[8px]">{ICONS.skype}</span>
         <span className="H-contacts !pl-[10px]">{ICONS.linkedin}</span>
       </div>
-      <div className="my-6 H-nav">
+      <div className="my-1 H-nav">
+      
         <a
           href="#hero"
           onClick={() => setActive("#hero")}
@@ -43,6 +44,7 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Home</span>
         </a>
+      
 
         <a
           href="#about"
@@ -88,6 +90,7 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Portfolio</span>
         </a>
+     
         {/* <a href="#skills" ><i>{ICONS.services} </i> <span className="" >  Skills</span></a> */}
         <a
           href="#contact"
@@ -121,8 +124,10 @@ const Sidebar = () => {
           </i>{" "}
           <span className=""> Login</span>
         </Link>
+     
       </div>
       <div className="mr-4"> <Footer/></div>
+
      
     </>
   );
