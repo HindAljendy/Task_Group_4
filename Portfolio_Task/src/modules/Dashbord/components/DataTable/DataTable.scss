@@ -1,0 +1,84 @@
+.BY_datatable {
+    display: flex;
+    width: 100%;
+    //background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .BY_table {
+        //width: 80%;
+        display: flex;
+
+        .cellAction {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 2px;
+            align-items: center;
+            padding: 3px;
+            justify-content: center;
+            align-items: center;
+            // background-color: antiquewhite;
+            height: 100%;
+            
+
+            .viewIconSection {
+                cursor: pointer;
+                display: flex;
+
+                align-items: center;
+                height: 100%;
+                color: var(--green_icon);
+                font-size: 1.5em;
+
+                &:hover {
+                    scale: (1.2);
+                    color: var(--dark_green_icon);
+                }
+
+
+            }
+
+            .deleteIconSection {
+                display: flex;
+                cursor: pointer;
+                height: 100%;
+                //background-color: rgb(53, 31, 179);
+                align-items: center;
+                color: var(--red_icon);
+                font-size: 1.5em;
+
+                &:hover {
+                    scale: (1.2);
+                    color: var(--dark_red_icon);
+                }
+            }
+
+            .editIconSection {
+                display: flex;
+                height: 100%;
+                //background-color: rgb(147, 132, 235);
+                align-items: center;
+                color: var(--blue_icon);
+                font-size: 1.5em;
+                cursor: pointer;
+
+                &:hover {
+                    scale: (1.2);
+                    color: var(--dark_blue_icon);
+                }
+            }
+        }
+    }
+    .ConfirmaDelete-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3); 
+        z-index: 9999; 
+      }
+}

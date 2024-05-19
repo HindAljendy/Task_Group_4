@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+
+}
+.h-mobile-nav{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    background-color: #149ddd;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+.H-contacts {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 10px 0;
+    margin-right: 6px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+.H-contacts:hover {
+    background: #149ddd;
+    cursor: pointer;
+}
+
+.H-nav a,
+.H-nav a:focus{
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+.H-nav a i,
+.H-nav a:focus i{
+    font-size: 24px;
+    padding-right: 8px;
+    color: #6f7180;
+}
+.H-nav a:hover{
+    color: #fff;
+}
+.H-nav a i:hover{
+    color: #149ddd !important
+}
+.section-title{
+font-size: 32px;
+font-weight: bold;
+margin-bottom: 10px;
+padding-bottom: 20px;
+position: relative;
+color: #173b6c;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #149ddd;
+    bottom: 0;
+    left: 0;
+    margin:  1rem 0;
+
+}
+
+.arrow{
+    font-size: 16px;
+    margin-right: 5px;
+    color: #149ddd;
+    line-height: 0;
+}
+.nav-animation-in{
+    animation-name: fade-nav-in;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+
+
+
+/* contact part */
+
+.contact-icons{
+    font-size: 20px;
+    color: #149ddd;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #dff3fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.contact-icons:hover{
+    background: #149ddd;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* animation */
+
+
+@keyframes fade-nav-in {
+    0%{
+        transform: translateX(-200px);
+        
+    }
+    50%{
+        transform: translateX(-100px);
+
+    }
+
+    100%{
+        transform: translateX(0px);
+        
+    }
+}
