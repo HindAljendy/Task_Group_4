@@ -19,5 +19,4 @@ export const ICONS = {
     view:<MdViewAgenda/>,
     arrow_left:<FaArrowLeft />
 
-
 }

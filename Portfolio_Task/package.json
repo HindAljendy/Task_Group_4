@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.17",
     "@mui/x-data-grid": "^7.4.0",
+=======
+>>>>>>> c1be216768c147c9ebbbd86805ffc2e9deb75316
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "localforage": "^1.10.0",
@@ -38,7 +41,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "^8.4.38",
+<<<<<<< HEAD
     "sass": "^1.77.1",
+=======
+>>>>>>> c1be216768c147c9ebbbd86805ffc2e9deb75316
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
