@@ -1,0 +1,155 @@
+.HJ_Messages {
+  font-family: var(--roboto);
+  font-size: 0.8rem;
+  color: var(--dark_blue);
+}
+
+.HJ_Messages .text-bold {
+  color: var(--dark-20);
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: var(--roboto);
+}
+
+.HJ_Messages p {
+  margin: 0;
+}
+
+.HJ_Messages .HJ_border-b {
+  border-bottom: 0.1rem solid var(--light);
+}
+
+.HJ_Messages .HJ_toolbar {
+  display: flex;
+  justify-content: space-between;
+  color: var(--black);
+  padding: 1rem 1.5rem;
+  width: 20.2rem;
+}
+
+.HJ_Messages ::-webkit-scrollbar-thumb {
+  background-color: var(--dark_blue);
+  width: 0.5rem;
+}
+
+
+.HJ_Messages ::-webkit-scrollbar {
+  width: 0.2rem;
+
+}
+
+.HJ_Messages ::-webkit-scrollbar-track {
+  background-color: var(--light);
+
+}
+
+.HJ_Messages>.d-flex>div:first-of-type {
+  width: 60%;
+  height: 80vh;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+
+.HJ_Messages .HJ_list {
+  background-color: var(--light);
+  color: var(--dark_blue);
+  min-height: 100vh;
+  padding: 1rem 0rem;
+  border-radius: 1.875rem 1.875rem 0rem 0rem;
+
+}
+
+.HJ_Messages .HJ_list .HJ_item {
+  padding: 0.5rem;
+  border-bottom: 0.1rem solid var(--dark-20);
+}
+
+.HJ_Messages .HJ_list .HJ_item>div {
+  width: 98%;
+}
+
+.HJ_Messages .HJ_list .HJ_item .d-flex {
+  align-items: center;
+}
+
+
+.HJ_Messages .HJ_list .HJ_item .f-right {
+  float: right;
+
+}
+
+
+.HJ_content {
+  background-color: var(--light);
+  padding: 3rem;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  width: 42vw;
+}
+
+.HJ_content_inbox_space {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.HJ_content .HJ_lineheight {
+  line-height: 20px;
+}
+.HJ_Text_Message{
+  color: var(--dark_blue);
+  font-size: 1rem;
+  font-family: var(--roboto);
+}
+.HJ_content .HJ_special_Color{
+  color:brown;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 37rem;
+  margin: 80px auto;
+}
+
+.HJ_part_names {
+  display: flex;
+  justify-content: space-between;
+}
+
+.HJ_part_name_ms {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.HJ_part_photo_ms {
+  margin-left: 1.5rem;
+}
+
+
+.HJ_nomail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+.HJ_nomail .HJ_nomailimg {
+  width: 10.5rem;
+  height: 11.rem;
+}
+
+.HJ_IconsAction{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  
+}
+.HJ_IconsAction .HJ_IconMessage{
+  font-size: 1.2rem;
+  color:brown;
+}
+
