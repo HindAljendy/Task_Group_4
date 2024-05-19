@@ -47,7 +47,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log("error happened", error);
-      setError("please, Try again..");
+      setError("Error , please, Try again..");
     }
   };
 
@@ -96,7 +96,10 @@ const Login = () => {
                 >
                   Login
                 </button>
+                {(error !== "") && <p style={{ color: "red" }}>{error}</p>}
+
               </div>
+
             </div>
           </div>
         </div>

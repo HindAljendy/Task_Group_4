@@ -1,6 +1,6 @@
 import { Project } from "../../configs/global";
 
-const PortfolioDetails: React.FC<Project> = ({ id, image, year, description, title }) => {
+const PortfolioDetails: React.FC<Project> = ({ image, year, description, title }) => {
   return (
     <div>
         <div  className="W-full bg-[#fff] rounded-[10px] p-[20px]">

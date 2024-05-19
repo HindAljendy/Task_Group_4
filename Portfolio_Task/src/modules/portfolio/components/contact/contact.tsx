@@ -25,6 +25,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(API.POST.addmessage, data);
+      console.log("Success:", res.data);
       setError({});
       window.scrollTo(0, 0);
     } catch (err) {
