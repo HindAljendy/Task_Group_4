@@ -65,14 +65,14 @@ const AddProject = () => {
                                 Year <sup>*</sup>
                             </label>
                             <input type='text' placeholder='2022' onChange={(e) => { setYear(e.target.value) }} />
-                            {/* <p>test</p> */}
+
                         </div>
                         <div className='field'>
                             <label>
                                 Category <sup>*</sup>
                             </label>
                             <input type='text' placeholder='Full Stack' onChange={(e) => { setCategory(e.target.value) }} />
-                            {/* <p>test</p> */}
+
                         </div>
                         <div className='field long'>
                             <label>
@@ -96,7 +96,7 @@ const AddProject = () => {
 
                                 {/* {image && <img src={image} alt="Uploaded" />} */}
                             </label>
-                            {/* <p>test</p> */}
+                            <p>png, jpg, jpeg, gif only</p>
                         </div>
 
                         {/* {errorMessage && <div className="error-message">{errorMessage}</div>} */}
@@ -108,7 +108,7 @@ const AddProject = () => {
 
                 </div>
                 <div className="bottomSection">
-                    <button value="Back" className='back' onClick={goBack }> {ICONS.arrow_left}Back</button>
+                    <button value="Back" className='back' onClick={goBack}> {ICONS.arrow_left}Back</button>
                 </div>
             </div>
 

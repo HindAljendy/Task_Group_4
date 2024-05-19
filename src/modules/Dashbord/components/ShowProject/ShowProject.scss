@@ -1,4 +1,4 @@
-.BY_editProject {
+.BY_showProject {
     //background-color: var(--light);
     justify-content: center;
     padding: 10px;
@@ -29,7 +29,6 @@
     .container {
         padding: 10px;
         width: 70%;
-        //background-color: aqua;
 
         .topSection {
             padding: 5px;
@@ -38,18 +37,15 @@
                 color: var(--dark_blue);
             }
 
-            // background-color: antiquewhite;
         }
 
         .contentSection {
-            //border: 1px solid lightcoral;
             background-color: var(--gray-60);
             border-radius: 10px;
             padding: 10px;
             //-webkit-box-shadow: 2px 4px 10px 1px var(--dark_blue);
             box-shadow: 2px 4px 8px 1px var(--dark_blue);
 
-            //background-color: greenyellow;
             form {
                 //background-color: aliceblue;
                 display: grid;
@@ -79,9 +75,11 @@
 
                     input {
                         background-color: transparent;
+                        //border: none;
                         border: 1px solid var(--light);
                         border-radius: 10px;
                         padding: 10px;
+                       // border-bottom: 1px solid var(--light_blue);
                         outline: none;
 
                         color: var(--dark_blue);
@@ -93,10 +91,6 @@
                         font-size: small;
                         color: var(--light);
 
-                    }
-
-                    #image {
-                        display: none;
                     }
 
                     .image_label {
@@ -116,6 +110,15 @@
                         &:hover {
                             background-color: var(--light_gray)
                         }
+                    }
+
+                    .project_image{
+                        padding: 10px;
+                        width: 60%;
+                        background-color: var(--light);
+                        display: flex;
+                        justify-content: center;
+                        align-self: center;
                     }
 
                     &.long {

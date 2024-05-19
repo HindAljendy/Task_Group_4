@@ -1,0 +1,54 @@
+.BY_confirmDelete {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--gray-60);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 10px 10px var(--light_gray);
+    z-index: 9999;
+    // opacity: 0;
+    // visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+  
+
+    .dialog-content {
+      text-align: center;
+  
+      h2 {
+        margin-top: 0;
+        color:var(--light);
+        font-weight: 600;
+      }
+  
+      p {
+        margin-bottom: 20px;
+      }
+  
+      .button-group {
+        display: flex;
+        justify-content: center;
+  
+        .delete-button,
+        .cancel-button {
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        .delete-button {
+          background-color:var(--delete_button);
+          color: #fff;
+          margin-right: 10px;
+        }
+  
+        .cancel-button {
+          background-color: var(--light);
+          color: #000;
+        }
+      }
+    }
+  }

@@ -6,6 +6,7 @@ import './DataTable.scss';
 import { useState, useEffect } from 'react';
 import * as projectServices from "../../services/projectsServices"
 import { useNavigate } from 'react-router-dom';
+import ConfirmaDelete from '../ConfirmDelete/ConfirmDelete';
 
 interface Project {
     id: number;
@@ -43,26 +44,66 @@ const projectsColumns: GridColDef[] = [
 const DataTable: React.FC<DataTableProps> = ({ type }) => {
     const navigate = useNavigate();
 
-    const goToEditPage= (id:any)=>{
+    const goToEditPage = (id: any) => {
         navigate(`/dashboard/projects/edit/${id}`)
     }
-    const [projects_rows, setProjectsRows] = useState<Project[]>([]);
-    // const [messages_rows, setMessagesRow] = useState<any[]>([]);
 
-    var rows: any[] = [];
-    var columns: GridColDef[] = [];
+    const goToShowPage = (id: any) => {
+        navigate(`/dashboard/projects/show/${id}`)
+    }
+
+    const deleteProjectById = async (id: any) => {
+        try {
+            await projectServices.deleteProjectById(id);
+            getAllData();
+            navigate("/dashboard/projects");
+        } catch (error) {
+            console.error('Error in delete project:', error);
+        }
+    }
+
+    //_____________________________________________________
+    const [selectedItemId, setSelectedItemId] = useState(null);
+    const [showConfirm, setShowConfirm] = useState(false);
+
+    const handleDeleteClick = (projectId: any) => {
+        setSelectedItemId(projectId);
+        setShowConfirm(true);
+        console.log(`projectId`, projectId)
+        console.log(`select delete`, selectedItemId)
+    };
+
+    const handleDeleteConfirm = () => {
+        deleteProjectById(selectedItemId);
+        console.log(`Delete item with ID: ${selectedItemId}`);
+        setShowConfirm(false);
+    };
+
+    const handleDeleteCancel = () => {
+        setSelectedItemId(null);
+        setShowConfirm(false);
+    };
+    useEffect(() => {
+
+        console.log(`showConfirm`, showConfirm)
+    }, [selectedItemId]);
+
+
+
+    const [projects_rows, setProjectsRows] = useState<Project[]>([]);
+
+    const getAllData = async () => {
+        try {
+            const response = await projectServices.getAllProjects();// call the api 
+            const projectsData: Project[] = response;
+            setProjectsRows(projectsData);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     useEffect(() => {
-        const getAllData = async () => {
-            try {
-                const response = await projectServices.getAllProjects();// call the api 
-                const projectsData: Project[] = response;
-                setProjectsRows(projectsData);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
+        setShowConfirm(false);
         getAllData();
     }, []);
 
@@ -74,35 +115,22 @@ const DataTable: React.FC<DataTableProps> = ({ type }) => {
         renderCell: (params) => {
             return (
                 <div className="cellAction" style={{ display: 'flex' }}>
-                    <div className="editIconSection" onClick={()=>goToEditPage(params.row.id)}>{ICONS.edit}</div>
-                    <div className="viewIconSection">{ICONS.view}</div>
-                    <div className="deleteIconSection">{ICONS.delete}</div>
+                    <div className="editIconSection" onClick={() => goToEditPage(params.row.id)}>{ICONS.edit}</div>
+                    <div className="viewIconSection" onClick={() => goToShowPage(params.row.id)}>{ICONS.view}</div>
+                    <div className="deleteIconSection" onClick={() => handleDeleteClick(params.row.id)}>{ICONS.delete}</div>
                 </div>
             );
         }
     };
 
-    switch (type) {
-        case "projectsTable":
-            rows = projects_rows;
-            columns = [...projectsColumns, projectsActionColumn];
-            break;
-        case "messagesTable":
-            // rows = messages_rows;
-            rows = [];
-            // columns = messagesColumns;
-            columns = [];
-            break;
-        default:
-            break;
-    }
+
 
     return (
         <div className="BY_datatable">
             <DataGrid
                 className='BY_table'
-                rows={rows}
-                columns={columns}
+                rows={projects_rows}
+                columns={[...projectsColumns, projectsActionColumn]}
                 initialState={{
                     pagination: {
                         paginationModel: { page: 0, pageSize: 5 },
@@ -113,8 +141,19 @@ const DataTable: React.FC<DataTableProps> = ({ type }) => {
                 }}
                 rowHeight={70}
                 pageSizeOptions={[5, 10]}
-                checkboxSelection
+            //checkboxSelection
             />
+
+            {showConfirm && (
+                <div className="ConfirmaDelete-overlay">
+                    <ConfirmaDelete
+                        onDelete={handleDeleteConfirm}
+                        onCancel={handleDeleteCancel}
+                    />
+                </div>
+
+            )}
+
         </div>
     );
 }

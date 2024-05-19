@@ -20,7 +20,7 @@ const EditProject = () => {
     const navigate = useNavigate();
     const param = useParams();
 
-    console.log(`this is  ${param.id}`);
+    console.log(`this is project with id ${param.id}`);
 
 
     // get Project Data
@@ -61,6 +61,7 @@ const EditProject = () => {
 
     const sendData = async (event: any) => {
         event.preventDefault();
+
         let data = {
             title: title,
             year: year,
@@ -70,7 +71,7 @@ const EditProject = () => {
         }
         console.log(data);
         try {
-            await projectServices.addNewProject(data);
+            await projectServices.editProject(data, param.id);
             navigate("/dashboard/projects");
         } catch (error) {
             console.error('Error creating new project:', error);
@@ -102,7 +103,7 @@ const EditProject = () => {
                                 Title
                             </label>
                             {/*  */}
-                            <input type='text' placeholder='Portfolio Project' defaultValue={project.title} onChange={(e) => { setTitle({ ...project, title: e.target.value}) }} />
+                            <input type='text' placeholder='Portfolio Project' defaultValue={project.title} onChange={(e) => { setTitle( e.target.value) }} />
                             {/* <p>test</p> */}
                         </div>
                         <div className='field'>
@@ -141,14 +142,13 @@ const EditProject = () => {
 
                                 {/* {image && <img src={image} alt="Uploaded" />} */}
                             </label>
-                            {/* <p>test</p> */}
+                            <p>png, jpg, jpeg, gif only</p>
                         </div>
 
                         {errorMessage && <div className="error-message">{errorMessage}</div>}
                         <div className="buttonSection">
 
-
-                            <input type="back" value="Submit" className='submit' />
+                            <input type="submit" value="Save" className='submit' />
 
                         </div>
                     </form>

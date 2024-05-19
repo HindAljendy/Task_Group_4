@@ -22,7 +22,7 @@ export async function getAllProjects() {
 
 export async function addNewProject(data: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYwNDgwNjQsImV4cCI6MTcxNjA1MTY2NCwibmJmIjoxNzE2MDQ4MDY0LCJqdGkiOiJBNU9JOFJXdjVQMFlkUmhYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.KZwyvaFm7HCXidoVBNIsUNM3dNc5gix9BSbQ0cTgJ2I";
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.post(url_projects, data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -44,7 +44,7 @@ export async function addNewProject(data: any) {
 
 export async function editProject(data: any, id: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYwNDgwNjQsImV4cCI6MTcxNjA1MTY2NCwibmJmIjoxNzE2MDQ4MDY0LCJqdGkiOiJBNU9JOFJXdjVQMFlkUmhYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.KZwyvaFm7HCXidoVBNIsUNM3dNc5gix9BSbQ0cTgJ2I";
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.post(url_projects + '/' + id, data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -53,8 +53,9 @@ export async function editProject(data: any, id: any) {
             },
         });
         if (response.status === 200) {
-            const projectData = response.data;
-            return projectData.data;
+            const projectUpdatedData = response.data;
+          //  console.log('projectUpdatedData ',projectUpdatedData)
+            return projectUpdatedData;
         } else {
             throw new Error('Failed to create new project');
         }
@@ -66,7 +67,7 @@ export async function editProject(data: any, id: any) {
 
 export async function getProjectById(id: any) {
     try {
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYwNDgwNjQsImV4cCI6MTcxNjA1MTY2NCwibmJmIjoxNzE2MDQ4MDY0LCJqdGkiOiJBNU9JOFJXdjVQMFlkUmhYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.KZwyvaFm7HCXidoVBNIsUNM3dNc5gix9BSbQ0cTgJ2I";
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
         const response = await axios.get(url_projects + '/' + id,{
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -80,6 +81,28 @@ export async function getProjectById(id: any) {
             return projectData;
         } else {
             throw new Error(`Failed to get project with id=  ${id}`);
+        }
+    } catch (error: any) {
+        throw new Error(`Error: ${error.message}`);
+    }
+}
+
+
+export async function deleteProjectById(id: any) {
+    try {
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTYxMjUzNDMsImV4cCI6MTcxNjEyODk0MywibmJmIjoxNzE2MTI1MzQzLCJqdGkiOiJBOGc0NWRCUUc2YmN5REhuIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.HKnbul_TILPy0D-mu8yRum0YXP7B_huAlAH7SIDIx4o";
+        const response = await axios.delete(url_projects + '/' + id,{
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                //'Authorization': `Bearer ${token}`,
+                'Authorization': `Bearer ${token}`
+            },
+        });
+
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            throw new Error(`Failed to delete project with id=  ${id}`);
         }
     } catch (error: any) {
         throw new Error(`Error: ${error.message}`);
